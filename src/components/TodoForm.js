@@ -32,7 +32,7 @@ const TodoForm = () => {
             };
             dispatch(addTodo(newTodo));
         }
-    }, [title, description]);
+    }, [title, description, dispatch]); // Add 'dispatch' to the dependency array
 
     useEffect(() => {
         setTimeout(() => {
