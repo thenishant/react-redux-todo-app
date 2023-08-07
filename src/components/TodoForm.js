@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import TodoFormTemplate from '../common/TodoFormTemplate';
-import { useDispatch } from 'react-redux';
-import { addTodo } from '../redux/slices/todoSlice';
+import {useDispatch} from 'react-redux';
+import {addTodo} from '../redux/slices/todoSlice';
 
 const TodoForm = () => {
     const [title, setTitle] = useState('');
@@ -12,11 +12,11 @@ const TodoForm = () => {
     const fetchEnteredInfo = (info) => {
         addDescToggle
             ? setDescription(() => {
-                  return info;
-              })
+                return info;
+            })
             : setTitle(() => {
-                  return info;
-              });
+                return info;
+            });
 
         setAddDescToggle((prevState) => !prevState);
     };
@@ -52,7 +52,8 @@ const TodoForm = () => {
             >
                 Added Todo
             </div>
-            <h2 className="my-3 text-gray-300 text-2xl font-bold text-center">Todo App</h2>
+            <h2 className="my-3 text-gray-300 text-2xl font-bold text-center" data-name={'pageTitle'}
+                id={'page-title'}>Todo App</h2>
             <div>
                 {!addDescToggle && (
                     <TodoFormTemplate

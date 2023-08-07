@@ -36,6 +36,8 @@ const TodoFormTemplate = ({ fetchEnteredInfo, placeHolder, buttonText }) => {
             <div className="flex justify-between">
                 <input
                     className="flex-1 px-4 rounded-lg"
+                    data-name={'textBox'}
+                    id={'text-box-id'}
                     type="text"
                     placeholder={placeHolder}
                     value={todoInput}
@@ -53,6 +55,8 @@ const TodoFormTemplate = ({ fetchEnteredInfo, placeHolder, buttonText }) => {
                     className={`${
                         isEmpty ? 'bg-gray-400 cursor-not-allowed' : 'bg-pink-400 hover:bg-[#AB47BC]'
                     } p-2 font-bold mx-2 rounded-lg`}
+                    id={'add-button-id'}
+                    data-name={'submitButton'}
                     type="submit"
                     onClick={onClickButtonHandler}
                     disabled={isEmpty}
@@ -60,7 +64,7 @@ const TodoFormTemplate = ({ fetchEnteredInfo, placeHolder, buttonText }) => {
                     {buttonText}
                 </button>
             </div>
-            <p className={`mx-2 text-red-600 ${isInputClicked ? '' : 'invisible'}`}>field can not be empty</p>
+            <p className={`mx-2 text-red-600 ${isInputClicked ? '' : 'invisible'}`} id={'error-on-input'}>field can not be empty</p>
         </div>
     );
 };

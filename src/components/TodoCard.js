@@ -55,8 +55,8 @@ const TodoCard = ({ todo, index }) => {
                         >
                             <div className="flex">
                                 <div className="flex-1">
-                                    <h2 className="text-sm font-bold">{todo.title}</h2>
-                                    <h5 className="text-xs font-bold opacity-40">{todo.desc}</h5>
+                                    <h2 className="text-sm font-bold" data-name={'cardTitle'} id={'card-title'}>{todo.title}</h2>
+                                    <h5 className="text-xs font-bold opacity-40" data-name={'cardDesc'} id={'card-desc'} >{todo.desc}</h5>
                                 </div>
                                 {todo.status === 'PENDING' && (
                                     <EditIcon

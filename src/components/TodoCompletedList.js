@@ -8,7 +8,7 @@ const TodoCompletedList = ({ completedTodos }) => {
             {(provided) => (
                 <div ref={provided.innerRef} {...provided.droppableProps} className="flex-1">
                     <div className=" bg-[#cfecaf] mx-4 rounded-lg fixed-height h-22">
-                        <h2 className="text-center font-bold text-[#33691E] m-2">Completed</h2>
+                        <h2 className="text-center font-bold text-[#33691E] m-2" id={'completed-cards-title'}>Completed</h2>
                         {completedTodos.length === 0 && (
                             <h2 className="text-center font-bold text-gray-400">List is blank</h2>
                         )}

@@ -8,7 +8,7 @@ const TodoPendingList = ({ pendingTodos }) => {
             {(provided) => (
                 <div ref={provided.innerRef} {...provided.droppableProps} className="flex-1">
                     <div className="bg-[#d6b5b9] mx-4 rounded-lg fixed-height h-22 shadow-lg">
-                        <h2 className="text-center font-bold text-[#B71C1C] m-2">Pending</h2>
+                        <h2 className="text-center font-bold text-[#B71C1C] m-2" id={'pending-cards-title'}>Pending</h2>
 
                         {pendingTodos.length !== 0 && (
                             <div className="hide-scrollbar" style={{ height: '300px', overflow: 'auto' }}>
