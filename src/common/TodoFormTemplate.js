@@ -1,14 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, {useState, useRef} from 'react';
 
-const TodoFormTemplate = ({ fetchEnteredInfo, placeHolder, buttonText }) => {
+const TodoFormTemplate = ({fetchEnteredInfo, placeHolder, buttonText}) => {
     const [todoInput, setTodoInput] = useState('');
     const inputRef = useRef(null);
     const [isEmpty, setIsEmpty] = useState(true);
-    const [isInputClicked, setIsInputClicked] = useState(false);
-
-    // useEffect(() => {
-    //     inputRef.current.focus();
-    // }, []);
+    const [isInputClicked, setIsInputClicked] = useState(false)
 
     const onChangeHandler = (e) => {
         if (e.target.value) {
@@ -64,7 +60,8 @@ const TodoFormTemplate = ({ fetchEnteredInfo, placeHolder, buttonText }) => {
                     {buttonText}
                 </button>
             </div>
-            <p className={`mx-2 text-red-600 ${isInputClicked ? '' : 'invisible'}`} id={'error-on-input'}>field can not be empty</p>
+            <p className={`mx-2 text-red-600 ${isInputClicked ? '' : 'invisible'}`} id={'error-on-input'}>field can not
+                be empty</p>
         </div>
     );
 };

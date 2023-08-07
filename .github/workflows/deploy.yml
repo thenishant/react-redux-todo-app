@@ -4,7 +4,7 @@ on:
   push: {}
 
 jobs:
-  deploy-frontend:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,11 +15,3 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Deploy Github Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          destination_dir: docs
-          keep_files: true

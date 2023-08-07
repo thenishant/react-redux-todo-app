@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
     todos: [],
@@ -24,7 +24,7 @@ export const todoSlice = createSlice({
             state.todos = state.todos.filter((todo) => todo.id !== action.payload);
         },
         dragTodoToInProcess: (state, action) => {
-            const { draggableId, source, destination } = action.payload;
+            const {source, destination} = action.payload;
             const myTodoList = state.todos;
 
             let pendingTodos = [];
@@ -41,27 +41,23 @@ export const todoSlice = createSlice({
                     return completedTodos.push(todo);
                 }
             });
-            
-            if(source.droppableId === destination.droppableId){
-                if(source.droppableId==="PENDING"){
+
+            if (source.droppableId === destination.droppableId) {
+                if (source.droppableId === "PENDING") {
                     tempRemovedTodo = pendingTodos.splice(source.index, 1)[0]
                     pendingTodos.splice(destination.index, 0, tempRemovedTodo)
-                }
-                else if(source.droppableId==="INPROCESS"){
+                } else if (source.droppableId === "INPROCESS") {
                     tempRemovedTodo = inProcessTodos.splice(source.index, 1)[0]
                     pendingTodos.splice(destination.index, 0, tempRemovedTodo)
-                }
-                else if(source.droppableId==="COMPLETED"){
+                } else if (source.droppableId === "COMPLETED") {
                     tempRemovedTodo = completedTodos.splice(source.index, 1)[0]
                     pendingTodos.splice(destination.index, 0, tempRemovedTodo)
                 }
-            }
-            else if(source.droppableId !== destination.droppableId){
-                if(source.droppableId==="PENDING" && destination.droppableId==="INPROCESS"){
+            } else if (source.droppableId !== destination.droppableId) {
+                if (source.droppableId === "PENDING" && destination.droppableId === "INPROCESS") {
                     tempRemovedTodo = pendingTodos.splice(source.index, 1)[0]
                     inProcessTodos.splice(destination.index, 0, {...tempRemovedTodo, status: "INPROCESS"})
-                }
-                else if(source.droppableId==="INPROCESS" && destination.droppableId==="COMPLETED"){
+                } else if (source.droppableId === "INPROCESS" && destination.droppableId === "COMPLETED") {
                     tempRemovedTodo = inProcessTodos.splice(source.index, 1)[0]
                     completedTodos.splice(destination.index, 0, {...tempRemovedTodo, status: "COMPLETED"})
                 }
@@ -72,6 +68,6 @@ export const todoSlice = createSlice({
     },
 });
 
-export const { addTodo, deleteTodo, updateTodo, dragTodoToInProcess } = todoSlice.actions;
+export const {addTodo, deleteTodo, updateTodo, dragTodoToInProcess} = todoSlice.actions;
 export default todoSlice.reducer;
 export const selectTodos = (state) => state.todo.todos;
