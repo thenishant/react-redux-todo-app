@@ -1,0 +1,5 @@
+- clone the repository
+- run below command to install dependencies
+  - npm install
+- start the app using below command
+  - npm start
