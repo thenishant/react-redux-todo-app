@@ -13,23 +13,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy with gh-pages
-        run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #      - name: Set up Node.js
+  #        uses: actions/setup-node@v2
+  #        with:
+  #          node-version: 18
+  #
+  #      - name: Install dependencies
+  #        run: npm install
+  #
+  #      - name: Build
+  #        run: npm run build
+  #
+  #      - name: Deploy with gh-pages
+  #        run: |
+  #          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+  #          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+  #        env:
+  #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   scrapper:
     needs: build
@@ -38,5 +38,5 @@ jobs:
     steps:
       - name: Scrap ids
         run: |
-          tsc ../../scapper/htmlScrapper.ts
-          node ../../scapper/htmlScrapper.js
+          ls
+          pwd
