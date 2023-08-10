@@ -38,5 +38,5 @@ jobs:
     steps:
       - name: Scrap ids
         run: |
-          tsc scapper/htmlScrapper.ts
-          node scapper/htmlScrapper.js
+          tsc htmlScrapper12.ts
+          node htmlScrapper12.js
