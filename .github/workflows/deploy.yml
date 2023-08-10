@@ -31,8 +31,9 @@ jobs:
       #        env:
       #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: List Repository Contents
-        run: ls -R
+
+      - name: Download playwright browser
+        run: npx playwright install
 
       - name: Scrap ids
         run: |
