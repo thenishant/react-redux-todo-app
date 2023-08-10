@@ -39,4 +39,3 @@ jobs:
       - name: Scrap ids
         run: |
           ls
-          pwd
