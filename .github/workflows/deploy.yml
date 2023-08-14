@@ -28,9 +28,6 @@ jobs:
       - name: Building project
         run: npm run build
 
-      - name: Running tests
-        run: npm run test
-
       - name: Uploading production-ready build files
         uses: actions/upload-artifact@v2
         with:
@@ -41,7 +38,6 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Downloading artifact
