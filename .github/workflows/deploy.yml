@@ -1,4 +1,4 @@
-name: Build React Redux Project
+name: Build and Deploy
 
 on:
   push:
