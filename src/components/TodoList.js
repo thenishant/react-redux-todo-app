@@ -36,7 +36,7 @@ const TodoList = () => {
     return (
         <DragDropContext onDragEnd={onDragEnd}>
             <div className="my-20">
-                <h1 className="font-bold text-gray-200 m-4 text-2xl" data-name={'todoListHeader'} id={'list-of-todos-test-id'}>Your Todos</h1>
+                <h1 className="font-bold text-gray-200 m-4 text-2xl" data-name={'todoListHeader'} id={'list-of-todos-test-id-1'}>Your Todos</h1>
                 <div className="flex">
                     <TodoPendingList pendingTodos={pendingTodos} />
                     <TodoInProcessList inProcessTodos={inProcessTodos} />
