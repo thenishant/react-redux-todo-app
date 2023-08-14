@@ -53,7 +53,7 @@ const TodoForm = () => {
                 Added Todo
             </div>
             <h2 className="my-3 text-gray-300 text-2xl font-bold text-center" data-name={'pageTitle'}
-                id={'page-title'}>Todo App</h2>
+                id={'page-title-test-id'}>Todo App</h2>
             <div>
                 {!addDescToggle && (
                     <TodoFormTemplate

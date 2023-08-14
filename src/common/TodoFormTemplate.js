@@ -33,7 +33,7 @@ const TodoFormTemplate = ({fetchEnteredInfo, placeHolder, buttonText}) => {
                 <input
                     className="flex-1 px-4 rounded-lg"
                     data-name={'textBox'}
-                    id={'text-box-id'}
+                    id={'text-box-id-test-id'}
                     type="text"
                     placeholder={placeHolder}
                     value={todoInput}
@@ -51,7 +51,7 @@ const TodoFormTemplate = ({fetchEnteredInfo, placeHolder, buttonText}) => {
                     className={`${
                         isEmpty ? 'bg-gray-400 cursor-not-allowed' : 'bg-pink-400 hover:bg-[#AB47BC]'
                     } p-2 font-bold mx-2 rounded-lg`}
-                    id={'add-button-id'}
+                    id={'add-button-id-test-id'}
                     data-name={'submitButton'}
                     type="submit"
                     onClick={onClickButtonHandler}
